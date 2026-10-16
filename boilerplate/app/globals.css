@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: #050510;
+  color: #e2e8f0;
+  font-family: "Inter", system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.editor-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.canvas-loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: #38bdf8;
+  letter-spacing: 0.15em;
+}
+
+/* ---- Glassmorphism panels ---- */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.top-bar {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 22px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: #38bdf8;
+}
+
+.workflow-name {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.run-button {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.run-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.run-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.hint-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: 260px;
+  padding: 14px 18px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+.hint-panel strong {
+  color: #e2e8f0;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Node labels rendered via drei <Html> */
+.node-label {
+  background: rgba(10, 15, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #cbd5e1;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .run-button {
+    transition: none;
+  }
+}

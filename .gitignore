@@ -1,0 +1,21 @@
+
+# added by push-github.ps1
+node_modules/
+.next/
+dist/
+build/
+.dart_tool/
+.gradle/
+Pods/
+.expo/
+.idea/
+.turbo/
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*serviceAccount*.json
+*.log
+.DS_Store
